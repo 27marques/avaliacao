@@ -1,0 +1,5 @@
+[2022-10-22T00:09:04.438Z] Nível de log: Info
+[2022-10-22T00:09:04.450Z] [info] Validando git localizado em: git
+[2022-10-22T00:09:04.493Z] [info] Usando git 2.25.1 de git
+[2022-10-22T00:09:04.822Z] > git rev-parse --show-toplevel [316ms]
+[2022-10-22T00:09:04.823Z] fatal: not a git repository (or any of the parent directories): .git

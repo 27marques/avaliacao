@@ -1,0 +1,24 @@
+$body-color: red;
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+  color: $body-color;
+  background-image: url('../images/senac.png');
+  translate: translateX(100px);
+}
+
+body{
+  font-family: 'Lobster', cursive;
+  color: violet;
+  font-size: 16px;
+}
+
+.destaque {
+  color: red;
+}
+
+h1{
+  font-size: 1.8rem; // == 16px
+}
+

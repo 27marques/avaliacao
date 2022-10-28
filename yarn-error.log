@@ -1,0 +1,33 @@
+Arguments: 
+  /home/senac/.nvm/versions/node/v16.16.0/bin/node /home/senac/.nvm/versions/node/v16.16.0/bin/yarn init ou npm init
+
+PATH: 
+  /home/senac/.nvm/versions/node/v16.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Users/paty_/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/paty_/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.16.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: setRawMode EIO
+      at ReadStream.setRawMode (node:tty:78:31)
+      at Interface._setRawMode (node:readline:399:16)
+      at Interface.close (node:readline:583:10)
+      at ReadStream.ontermend (node:readline:284:10)
+      at ReadStream.emit (node:events:539:35)
+      at endReadableNT (node:internal/streams/readable:1345:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

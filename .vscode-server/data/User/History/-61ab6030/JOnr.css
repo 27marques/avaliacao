@@ -1,0 +1,49 @@
+.container{
+
+    max-width: 1330px;
+
+    margin: 0 auto;
+
+
+
+}
+
+
+
+/*Sistema de GRID*/
+
+.row{
+
+    display: flex;
+
+}
+
+
+
+.col-6{
+
+    flex-basis: 50%;
+
+}
+
+
+
+.col-4{
+
+    flex-basis: 33%;
+
+}
+
+
+
+@media (max-width:768px){
+
+    .col-6,
+
+    .col-4{
+
+        flex-basis: 100%;
+
+    }
+
+}

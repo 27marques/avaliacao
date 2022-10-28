@@ -1,0 +1,62 @@
+import { Alert } from "@mui/material";
+import { Container, grid } from "@mui/system";
+import React, { useEffect, useState } from "react";
+
+const FetchProducts = () => {
+    const [isLoading, setIsLoading] = useState(true);
+    const [data, setData] = useState([]);
+
+    const url = 'https://dummyjson.com/products'
+
+    useEffect(() => {
+        fetch(url)
+            .then(response => response.json())
+            .then((respData) => {
+                setData(respData.products);
+                setIsLoading(false);
+            })
+            .catch((error) => {
+                setIsLoading(false);
+                console.log(error);
+            })
+
+    }, []);
+
+    return (
+        <Grid container colunSpacing={2} sx={{ mt: 4 }}>
+            isLoading ? (
+            <Alert>Carregando</Alert>
+            ) : (
+            data.map((product) => (
+            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                {Array.from(Array(6)).map((_, index) => (
+                    <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="/static/images/cards/contemplative-reptile.jpg"
+                            alt="green iguana"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                Lizard
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Lizards are a widespread group of squamate reptiles, with over 6,000
+                                species, ranging across all continents except Antarctica
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">Share</Button>
+                            <Button size="small">Learn More</Button>
+                        </CardActions>
+                    </Card>
+                ))} 
+            ))  
+            </Grid>
+            ){"}"}
+        </Grid>
+    );
+    
+
+export default FetchProducts;

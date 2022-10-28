@@ -1,0 +1,59 @@
+[2022-10-21 21:05:12.762] [exthost] [info] Extension host with pid 2023 started
+[2022-10-21 21:05:12.854] [exthost] [info] ExtensionService#_doActivateExtension vscode.php-language-features, startup: false, activationEvent: 'onLanguage:php'
+[2022-10-21 21:05:12.856] [exthost] [info] ExtensionService#_doActivateExtension bmewburn.vscode-intelephense-client, startup: false, activationEvent: 'onLanguage:php'
+[2022-10-21 21:05:12.857] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-10-21 21:05:12.857] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+[2022-10-21 21:05:12.858] [exthost] [info] ExtensionService#_doActivateExtension vscode.ipynb, startup: true, activationEvent: '*'
+[2022-10-21 21:05:12.858] [exthost] [info] ExtensionService#_doActivateExtension spmeesseman.vscode-taskexplorer, startup: true, activationEvent: '*'
+[2022-10-21 21:05:13.432] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2022-10-21 21:05:13.432] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-10-21 21:05:13.814] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-21 21:05:13.814] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-21 21:05:13.815] [exthost] [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-21 21:05:13.815] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onStartupFinished', root cause: esbenp.prettier-vscode
+[2022-10-21 21:05:13.815] [exthost] [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-21 21:05:13.815] [exthost] [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-21 21:05:13.816] [exthost] [info] Eager extensions activated
+[2022-10-21 21:05:14.346] [exthost] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-21 21:05:14.814] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+[2022-10-21 21:05:14.815] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+[2022-10-21 21:05:14.815] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+[2022-10-21 21:08:50.574] [exthost] [info] Extension host terminating: received terminate message from renderer
+[2022-10-21 21:08:50.607] [exthost] [error] An error occurred when deactivating the subscriptions for extension 'bmewburn.vscode-intelephense-client':
+[2022-10-21 21:08:50.608] [exthost] [error] TypeError: Cannot read private member from an object whose class did not declare it
+    at Be (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:102:6990)
+    at Object.dispose (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:88:13905)
+    at P (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:10:12171)
+    at p._deactivate (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:102:13490)
+    at /home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:102:10637
+    at Array.map (<anonymous>)
+    at p._deactivateAll (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:102:10624)
+    at p.terminate (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:102:11010)
+    at p.terminate (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:106:620)
+    at m (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:116:19115)
+    at /home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:116:17043
+    at p.invoke (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:61:145)
+    at v.deliver (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:61:2266)
+    at b.fire (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:61:1844)
+    at c.fire (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:69:19049)
+    at s._receiveMessage (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:69:23861)
+    at /home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:69:21304
+    at p.invoke (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:61:145)
+    at v.deliver (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:61:2266)
+    at b.fire (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:61:1844)
+    at b.acceptChunk (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:69:15880)
+    at /home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:69:15010
+    at p.invoke (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:61:145)
+    at v.deliver (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:61:2266)
+    at b.fire (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:61:1844)
+    at b._processReadQueue (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:69:34570)
+    at b.acceptFrame (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:69:34226)
+    at p._acceptChunk (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:69:32190)
+    at /home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:69:29375
+    at Socket.d (/home/senac/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/out/vs/workbench/api/node/extensionHostProcess.js:69:27128)
+    at Socket.emit (node:events:526:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at Socket.Readable.push (node:internal/streams/readable:228:10)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)
+[2022-10-21 21:08:50.631] [exthost] [info] Extension host with pid 2023 exiting with code 0

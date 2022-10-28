@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt -br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Box</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>oi</h1>
+        <ul class="lista-lb" id="lightbox">
+            <li><a href="#" onclick="abreLb(this)"> <img data-full="https://picsum.photos/id/55/1024/768" src="https://picsum.photos/id/55/200/200" alt=""></a></li>
+            <li><a href="#" onclick="abreLb(this)"> <img data-full="https://picsum.photos/id/75/1024/768" src="https://picsum.photos/id/75/200/200" alt=""></a></li>
+            <li><a href="#" onclick="abreLb(this)"> <img data-full="https://picsum.photos/id/84/1024/768" src="https://picsum.photos/id/84/200/200" alt=""></a></li>
+            <li><a href="#" onclick="abreLb(this)"> <img data-full="https://picsum.photos/id/10/1024/768" src="https://picsum.photos/id/10/200/200" alt=""></a></li>
+            <li><a href="#" onclick="abreLb(this)"> <img data-full="https://picsum.photos/id/21/1024/768" src="https://picsum.photos/id/21/200/200" alt=""></a></li>
+            <li><a href="#" onclick="abreLb(this)"> <img data-full="https://picsum.photos/id/35/1024/768" src="https://picsum.photos/id/35/200/200" alt=""></a></li>
+        </ul>
+    </div>
+
+
+
+    <div class="lb hide" id="palco">
+        <a href="#" class="close" id="close">❌</a>
+        <img src="https://picsum.photos/1024/768" alt="Foto " id="fotoPrincipal">
+    </div>
+    <script src="assets/js/app.js"></script> 
+</body>
+</html>

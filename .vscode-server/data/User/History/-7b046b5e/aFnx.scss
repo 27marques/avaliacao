@@ -1,0 +1,44 @@
+$body-color: red;
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+  color: $body-color;
+  background-image: url('../images/senac.png');
+  translate: translateX(100px);
+}
+
+body{
+  font-family: 'Lobster', cursive;
+  color: violet;
+  font-size: 16px;
+}
+
+.destaque {
+  color: red;
+}
+
+h1{
+  font-size: 1.8rem; // == 16px
+}
+
+h2{
+  font-size: 28px;
+}
+
+h3{
+  font-size: 1em;
+}
+
+div{
+  border-style: solid;
+  border-width: 5px;
+  border-color: greenyellow;
+}
+
+.container{
+  width: 500px;
+  border: 5px solid greenyellow;
+  margin-left: auto;
+  margin-right: auto;
+}

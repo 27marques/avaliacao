@@ -1,0 +1,2108 @@
+{
+	"name": "vscode-taskexplorer",
+	"version": "2.9.1",
+	"displayName": "Task Explorer",
+	"description": "Tasks management for npm, vscode, yarn, ant, gradle, grunt, gulp, batch, bash,php composer, make, maven, python, perl, powershell, ruby, pipenv, nsis.  Supports external task providers via API.",
+	"icon": "res/gears-r-colors.png",
+	"publisher": "spmeesseman",
+	"license": "See LICENSE",
+	"homepage": "https://github.com/spmeesseman/vscode-taskexplorer/blob/master/README.md",
+	"author": {
+		"name": "Scott Meesseman"
+	},
+	"bugs": {
+		"url": "https://github.com/spmeesseman/vscode-taskexplorer/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/spmeesseman/vscode-taskexplorer.git"
+	},
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"galleryBanner": {
+		"color": "#EEEEEE",
+		"theme": "light"
+	},
+	"keywords": [
+		"tasks",
+		"task",
+		"npm",
+		"grunt",
+		"gulp",
+		"yarn",
+		"ant",
+		"makefile",
+		"composer",
+		"php",
+		"multi-root ready",
+		"c c++",
+		"gradle",
+		"tsc",
+		"nsis",
+		"batch",
+		"bash"
+	],
+	"main": "./dist/extension",
+	"activationEvents": [
+		"*"
+	],
+	"scripts": {
+		"build": "npx tsc -p ./",
+		"build_test": "npx tsc -p tsconfig.test.json",
+		"build-types": "tsc -p ./types",
+		"clean": "rimraf dist && rimraf .nyc_output && rimraf coverage",
+		"lint": "eslint -c .eslintrc.js --ext .ts .",
+		"package": "vsce package",
+		"publish": "vsce publish",
+		"rebuild": "rimraf dist && npm run build",
+		"rebuild_test": "rimraf dist && npm run build_test",
+		"install_extensions.bat": "cmd /c .\\install_extensions.bat",
+		"coverage-open_report": "cmd /c \"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\" file://c:/Projects/vscode-taskexplorer/coverage/index.html",
+		"coverage-full_on": "tools\\enable-full-coverage.sh",
+		"coverage-full_off": "tools\\enable-full-coverage.sh --off",
+		"coverage-codecov-publish": "node_modules/.bin/codecov --disable=gcov --disable=detect",
+		"test-all": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js",
+		"test-ant": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js ant",
+		"test-api": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js api",
+		"test-composer": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js composer",
+		"test-configuration": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js configuration",
+		"test-gulp": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js gulp",
+		"test-makefile": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js makefile",
+		"test-npm": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js npm",
+		"test-providers": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js providers",
+		"test-python": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js python",
+		"test-tasks": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js tasks",
+		"test-tree": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js tree",
+		"test-util": "npm run clean && npm run rebuild_test && node ./dist/test/runTest.js util",
+		"test:dev": "rimraf c:\\code\\data\\user-data\\cacheddata && npm run test",
+		"test:after": "npm run coverage-full_off",
+		"test:before": "npm run rebuild_test && npm run coverage-full_on",
+		"test:openreport": "npm run coverage-open-report",
+		"watch": "tsc -watch -p ./",
+		"webpack-watch": "webpack -w --info-verbosity verbose --mode development --config ./webpack.config.js",
+		"webpack-build": "npm run webpack-build:extension",
+		"webpack-rebuild": "rimraf dist && npm run webpack-build:extension",
+		"webpack-rebuild:extension": "rimraf dist && npm run webpack-build:extension --config ./webpack.config.js",
+		"webpack-build:extension": "webpack --mode production --config ./webpack.config.js",
+		"webpack-build:test": "webpack --mode production --config ./webpack.config.test.js"
+	},
+	"dependencies": {
+		"@sgarciac/bombadil": "^2.3.0",
+		"glob": "^7.1.7",
+		"is-utf8": "^0.2.1",
+		"jsonc-parser": "^2.3.1",
+		"minimatch": "^3.0.4",
+		"vscode-nls": "^4.1.2",
+		"xml2js": "^0.4.23"
+	},
+	"devDependencies": {
+		"@istanbuljs/nyc-config-typescript": "^1.0.1",
+		"@spmeesseman/vscode-taskexplorer-types": "^2.9.0",
+		"@types/glob": "^7.1.3",
+		"@types/minimatch": "^3.0.3",
+		"@types/mocha": "^9.1.0",
+		"@types/node": "^13.13.41",
+		"@types/semver": "^7.3.4",
+		"@types/vscode": "^1.50.0",
+		"@types/xml2js": "^0.4.8",
+		"@typescript-eslint/eslint-plugin": "^4.14.2",
+		"@typescript-eslint/eslint-plugin-tslint": "^4.14.2",
+		"@typescript-eslint/parser": "^4.14.2",
+		"@vscode/test-electron": "^2.1.1",
+		"codecov": "^3.8.1",
+		"eslint": "^7.19.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-jsdoc": "^31.6.0",
+		"eslint-plugin-no-null": "^1.0.2",
+		"eslint-plugin-prefer-arrow": "^1.2.3",
+		"eslint-plugin-prettier": "^3.3.1",
+		"grunt": "^1.3.0",
+		"gulp": "^4.0.2",
+		"mocha": "^9.2.0",
+		"mocha-explorer-launcher-scripts": "^0.3.0",
+		"mocha-junit-reporter": "^2.0.2",
+		"mocha-multi-reporters": "^1.5.1",
+		"nyc": "^15.1.0",
+		"rimraf": "^3.0.2",
+		"semver": "^7.3.4",
+		"source-map-support": "^0.5.19",
+		"ts-loader": "^8.0.17",
+		"ts-node": "^8.10.2",
+		"tslint": "^6.1.3",
+		"typescript": "^4.1.5",
+		"vsce": "^1.103.1",
+		"vscode-nls-dev": "^4.0.0",
+		"vscode-test": "^1.5.0",
+		"webpack": "^4.46.0",
+		"webpack-cli": "^3.3.12"
+	},
+	"greenkeeper": {
+		"ignore": [
+			"@types/node"
+		]
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"mocha": {},
+	"nyc": {},
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "taskActivity",
+					"title": "%view.name%",
+					"icon": "res/gears-r.svg"
+				}
+			]
+		},
+		"views": {
+			"explorer": [
+				{
+					"id": "taskExplorer",
+					"name": "%view.name%",
+					"when": "config.taskExplorer.enableExplorerView",
+					"icon": "res/gears-r.svg"
+				}
+			],
+			"taskActivity": [
+				{
+					"id": "taskExplorerSideBar",
+					"name": "",
+					"when": "config.taskExplorer.enableSideBar",
+					"icon": "res/gears-r.svg"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "taskExplorerSideBar.run",
+				"title": "%command.run%",
+				"when": "config.taskExplorer.enableSideBar",
+				"icon": {
+					"light": "res/light/continue.svg",
+					"dark": "res/dark/continue.svg"
+				}
+			},
+			{
+				"command": "taskExplorerSideBar.runNoTerm",
+				"title": "%command.runNoTerm%",
+				"when": "config.taskExplorer.enableSideBar",
+				"icon": {
+					"light": "res/light/continue.svg",
+					"dark": "res/dark/continue.svg"
+				}
+			},
+			{
+				"command": "taskExplorerSideBar.runWithArgs",
+				"title": "%command.runWithArgs%",
+				"when": "config.taskExplorer.enableSideBar",
+				"icon": {
+					"light": "res/light/continue.svg",
+					"dark": "res/dark/continue.svg"
+				}
+			},
+			{
+				"command": "taskExplorerSideBar.runLastTask",
+				"title": "%command.runLastTask%",
+				"when": "config.taskExplorer.enableSideBar",
+				"icon": {
+					"light": "res/light/continue.svg",
+					"dark": "res/dark/continue.svg"
+				}
+			},
+			{
+				"command": "taskExplorerSideBar.addToExcludes",
+				"title": "%command.addToExcludes%",
+				"when": "config.taskExplorer.enableSideBar"
+			},
+			{
+				"command": "taskExplorerSideBar.addRemoveFromFavorites",
+				"title": "%command.addRemoveFromFavorites%",
+				"when": "config.taskExplorer.enableSideBar",
+				"icon": {
+					"dark": "res/dark/favorite.svg",
+					"light": "res/light/favorite.svg"
+				}
+			},
+			{
+				"command": "taskExplorerSideBar.addRemoveCustomLabel",
+				"title": "%command.addRemoveCustomLabel%",
+				"when": "config.taskExplorer.enableSideBar"
+			},
+			{
+				"command": "taskExplorerSideBar.clearSpecialFolder",
+				"title": "CLR",
+				"when": "config.taskExplorer.enableSideBar"
+			},
+			{
+				"command": "taskExplorerSideBar.pause",
+				"title": "%command.pause%",
+				"when": "config.taskExplorer.enableSideBar",
+				"icon": {
+					"dark": "res/dark/pause.svg",
+					"light": "res/light/pause.svg"
+				}
+			},
+			{
+				"command": "taskExplorerSideBar.restart",
+				"title": "%command.restart%",
+				"when": "config.taskExplorer.enableSideBar",
+				"icon": {
+					"dark": "res/dark/restart.svg",
+					"light": "res/light/restart.svg"
+				}
+			},
+			{
+				"command": "taskExplorerSideBar.stop",
+				"title": "%command.stop%",
+				"when": "config.taskExplorer.enableSideBar",
+				"icon": {
+					"dark": "res/dark/stop.svg",
+					"light": "res/light/stop.svg"
+				}
+			},
+			{
+				"command": "taskExplorerSideBar.open",
+				"title": "%command.open%",
+				"when": "config.taskExplorer.enableSideBar",
+				"icon": {
+					"dark": "res/dark/file.svg",
+					"light": "res/light/file.svg"
+				}
+			},
+			{
+				"command": "taskExplorerSideBar.openTerminal",
+				"title": "%command.openTerminal%",
+				"when": "config.taskExplorer.enableSideBar",
+				"icon": {
+					"dark": "res/dark/terminal.svg",
+					"light": "res/light/terminal.svg"
+				}
+			},
+			{
+				"command": "taskExplorerSideBar.runInstall",
+				"title": "%command.runInstall%",
+				"when": "config.taskExplorer.enableSideBar"
+			},
+			{
+				"command": "taskExplorerSideBar.runUpdate",
+				"title": "%command.runUpdate%",
+				"when": "config.taskExplorer.enableSideBar"
+			},
+			{
+				"command": "taskExplorerSideBar.runUpdatePackage",
+				"title": "%command.runUpdatePackage%",
+				"when": "config.taskExplorer.enableSideBar"
+			},
+			{
+				"command": "taskExplorerSideBar.runAudit",
+				"title": "%command.runAudit%",
+				"when": "config.taskExplorer.enableSideBar"
+			},
+			{
+				"command": "taskExplorerSideBar.runAuditFix",
+				"title": "%command.runAuditFix%",
+				"when": "config.taskExplorer.enableSideBar"
+			},
+			{
+				"command": "taskExplorerSideBar.refresh",
+				"title": "%command.refresh%",
+				"when": "config.taskExplorer.enableSideBar",
+				"icon": {
+					"light": "res/light/refresh.svg",
+					"dark": "res/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.run",
+				"title": "%command.run%",
+				"when": "config.taskExplorer.enableExplorerView",
+				"icon": {
+					"light": "res/light/continue.svg",
+					"dark": "res/dark/continue.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.runNoTerm",
+				"title": "%command.runNoTerm%",
+				"when": "config.taskExplorer.enableExplorerView",
+				"icon": {
+					"light": "res/light/continue.svg",
+					"dark": "res/dark/continue.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.runWithArgs",
+				"title": "%command.runWithArgs%",
+				"when": "config.taskExplorer.enableExplorerView",
+				"icon": {
+					"light": "res/light/continue.svg",
+					"dark": "res/dark/continue.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.runLastTask",
+				"title": "%command.runLastTask%",
+				"when": "config.taskExplorer.enableExplorerView",
+				"icon": {
+					"light": "res/light/continue.svg",
+					"dark": "res/dark/continue.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.addToExcludes",
+				"title": "%command.addToExcludes%",
+				"when": "config.taskExplorer.enableExplorerView"
+			},
+			{
+				"command": "taskExplorer.addRemoveFromFavorites",
+				"title": "%command.addRemoveFromFavorites%",
+				"when": "config.taskExplorer.enableExplorerView",
+				"icon": {
+					"dark": "res/dark/favorite.svg",
+					"light": "res/light/favorite.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.addRemoveCustomLabel",
+				"title": "%command.addRemoveCustomLabel%",
+				"when": "config.taskExplorer.enableExplorerView"
+			},
+			{
+				"command": "taskExplorer.clearSpecialFolder",
+				"title": "CLR",
+				"when": "config.taskExplorer.enableExplorerView"
+			},
+			{
+				"command": "taskExplorer.pause",
+				"title": "%command.pause%",
+				"when": "config.taskExplorer.enableExplorerView",
+				"icon": {
+					"dark": "res/dark/pause.svg",
+					"light": "res/light/pause.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.restart",
+				"title": "%command.restart%",
+				"when": "config.taskExplorer.enableExplorerView",
+				"icon": {
+					"dark": "res/dark/restart.svg",
+					"light": "res/light/restart.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.open",
+				"title": "%command.open%",
+				"when": "config.taskExplorer.enableExplorerView",
+				"icon": {
+					"dark": "res/dark/file.svg",
+					"light": "res/light/file.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.openTerminal",
+				"title": "%command.openTerminal%",
+				"when": "config.taskExplorer.enableExplorerView",
+				"icon": {
+					"dark": "res/dark/terminal.svg",
+					"light": "res/light/terminal.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.stop",
+				"title": "%command.stop%",
+				"when": "config.taskExplorer.enableExplorerView",
+				"icon": {
+					"dark": "res/dark/stop.svg",
+					"light": "res/light/stop.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.runInstall",
+				"title": "%command.runInstall%",
+				"when": "config.taskExplorer.enableExplorerView"
+			},
+			{
+				"command": "taskExplorer.runUpdate",
+				"title": "%command.runUpdate%",
+				"when": "config.taskExplorer.enableExplorerView"
+			},
+			{
+				"command": "taskExplorer.runUpdatePackage",
+				"title": "%command.runUpdatePackage%",
+				"when": "config.taskExplorer.enableExplorerView"
+			},
+			{
+				"command": "taskExplorer.runAudit",
+				"title": "%command.runAudit%",
+				"when": "config.taskExplorer.enableExplorerView"
+			},
+			{
+				"command": "taskExplorer.runAuditFix",
+				"title": "%command.runAuditFix%",
+				"when": "config.taskExplorer.enableExplorerView"
+			},
+			{
+				"command": "taskExplorer.refresh",
+				"title": "%command.refresh%",
+				"when": "config.taskExplorer.enableExplorerView",
+				"icon": {
+					"light": "res/light/refresh.svg",
+					"dark": "res/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "taskExplorer.showOutput",
+				"title": "%command.showOutput%",
+				"when": "config.taskExplorer.enableExplorerView"
+			},
+			{
+				"command": "taskExplorer.getApi",
+				"title": "%command.getApi%"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "taskExplorer.runLastTask",
+				"key": "alt+r t",
+				"when": "config.taskExplorer.enableExplorerView"
+			},
+			{
+				"command": "taskExplorerSideBar.runLastTask",
+				"key": "alt+r t",
+				"when": "config.taskExplorer.enableSideBar"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "taskExplorer.runLastTask",
+					"when": "view == taskExplorer",
+					"group": "navigation"
+				},
+				{
+					"command": "taskExplorerSideBar.runLastTask",
+					"when": "view == taskExplorerSideBar",
+					"group": "navigation"
+				},
+				{
+					"command": "taskExplorer.refresh",
+					"when": "view == taskExplorer",
+					"group": "navigation"
+				},
+				{
+					"command": "taskExplorerSideBar.refresh",
+					"when": "view == taskExplorerSideBar",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "taskExplorer.runAudit",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorer.runAuditFix",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorer.runInstall",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorer.runUpdate",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorer.runUpdatePackage",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == script"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFile"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunning"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptS"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunningS"
+				},
+				{
+					"command": "taskExplorer.run",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == script"
+				},
+				{
+					"command": "taskExplorer.run",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFile"
+				},
+				{
+					"command": "taskExplorer.run",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptS"
+				},
+				{
+					"command": "taskExplorer.run",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorer.runWithArgs",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFile"
+				},
+				{
+					"command": "taskExplorer.runWithArgs",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == script"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFile"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptS"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileApp-publisher"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileWorkspace"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFilePython"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileAnt"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFilePerl"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileGradle"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileMake"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileGrunt"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileGulp"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileBash"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileBatch"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFilePowershell"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileRuby"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskFileNsis"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupApp-publisher"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupNpm"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupWorkspace"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupPython"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupPipenv"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupAnt"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupPerl"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupGradle"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupMake"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupGrunt"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupGulp"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupBash"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupBatch"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupPowershell"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupRuby"
+				},
+				{
+					"command": "taskExplorer.addToExcludes",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == taskGroupNsis"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == script"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFile"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunning"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptS"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunningS"
+				},
+				{
+					"command": "taskExplorer.addRemoveCustomLabel",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptS"
+				},
+				{
+					"command": "taskExplorer.addRemoveCustomLabel",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorer.addRemoveCustomLabel",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunningS"
+				},
+				{
+					"command": "taskExplorer.clearSpecialFolder",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == favorites"
+				},
+				{
+					"command": "taskExplorer.clearSpecialFolder",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == lasttasks"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showExecuteWithNoTerminalButton && view == taskExplorer && viewItem == script",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showExecuteWithNoTerminalButton && view == taskExplorer && viewItem == scriptFile",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showExecuteWithNoTerminalButton && view == taskExplorer && viewItem == scriptS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showExecuteWithNoTerminalButton && view == taskExplorer && viewItem == scriptFileS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.runWithArgs",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showExecuteWithArgumentsButton && view == taskExplorer && viewItem == scriptFile",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.runWithArgs",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showExecuteWithArgumentsButton && view == taskExplorer && viewItem == scriptFile",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.runWithArgs",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showExecuteWithArgumentsButton && view == taskExplorer && viewItem == scriptFileS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.runWithArgs",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showExecuteWithArgumentsButton && view == taskExplorer && viewItem == scriptFileS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.run",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == script",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.run",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFile",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.run",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.run",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFileS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == script",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFile",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptFileS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.open",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.openTerminal",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.openTerminal",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.restart",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.restart",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.pause",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.pause",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.stop",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.stop",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showFavoritesButton && view == taskExplorer && viewItem == script",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showFavoritesButton && view == taskExplorer && viewItem == scriptFile",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showFavoritesButton && view == taskExplorer && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showFavoritesButton && view == taskExplorer && viewItem == scriptS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showFavoritesButton && view == taskExplorer && viewItem == scriptFileS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableExplorerView && config.taskExplorer.showFavoritesButton && view == taskExplorer && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.clearSpecialFolder",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == favorites",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorer.clearSpecialFolder",
+					"when": "config.taskExplorer.enableExplorerView && view == taskExplorer && viewItem == lasttasks",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.runAudit",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorerSideBar.runAuditFix",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorerSideBar.runInstall",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorerSideBar.runUpdate",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorerSideBar.runUpdatePackage",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == script"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFile"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunning"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptS"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunningS"
+				},
+				{
+					"command": "taskExplorerSideBar.run",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == script"
+				},
+				{
+					"command": "taskExplorerSideBar.run",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFile"
+				},
+				{
+					"command": "taskExplorerSideBar.run",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptS"
+				},
+				{
+					"command": "taskExplorerSideBar.run",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorer.runWithArgs",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFile"
+				},
+				{
+					"command": "taskExplorer.runWithArgs",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == script"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFile"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptS"
+				},
+				{
+					"command": "taskExplorer.runNoTerm",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileApp-publisher"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileNpm"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileWorkspace"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFilePython"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileAnt"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFilePerl"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileGradle"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileMake"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileGrunt"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileGulp"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileBash"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileBatch"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFilePowershell"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileRuby"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskFileNsis"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupApp-publisher"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupNpm"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupWorkspace"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupPython"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupPipenv"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupAnt"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupPerl"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupGradle"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupMake"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupGrunt"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupGulp"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupBash"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupBatch"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupPowershell"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupRuby"
+				},
+				{
+					"command": "taskExplorerSideBar.addToExcludes",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == taskGroupNsis"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == script"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFile"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunning"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptS"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunningS"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveCustomLabel",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptS"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveCustomLabel",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFileS"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveCustomLabel",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunningS"
+				},
+				{
+					"command": "taskExplorerSideBar.clearSpecialFolder",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == favorites"
+				},
+				{
+					"command": "taskExplorerSideBar.clearSpecialFolder",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == lasttasks"
+				},
+				{
+					"command": "taskExplorerSideBar.run",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == script",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.run",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFile",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.run",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.run",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFileS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.runNoTerm",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showExecuteWithNoTerminalButton && view == taskExplorerSideBar && viewItem == script",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.runNoTerm",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showExecuteWithNoTerminalButton && view == taskExplorerSideBar && viewItem == scriptFile",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.runNoTerm",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showExecuteWithNoTerminalButton && view == taskExplorerSideBar && viewItem == scriptS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.runNoTerm",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showExecuteWithNoTerminalButton && view == taskExplorerSideBar && viewItem == scriptFileS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.runWithArgs",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showExecuteWithArgumentsButton && view == taskExplorerSideBar && viewItem == scriptFile",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.runWithArgs",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showExecuteWithArgumentsButton && view == taskExplorerSideBar && viewItem == scriptFileS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == script",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFile",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptFileS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.open",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.openTerminal",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.openTerminal",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.restart",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.restart",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.pause",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.pause",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.stop",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.stop",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showFavoritesButton && view == taskExplorerSideBar && viewItem == script",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showFavoritesButton && view == taskExplorerSideBar && viewItem == scriptFile",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showFavoritesButton && view == taskExplorerSideBar && viewItem == scriptRunning",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showFavoritesButton && view == taskExplorerSideBar && viewItem == scriptS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showFavoritesButton && view == taskExplorerSideBar && viewItem == scriptFileS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.addRemoveFromFavorites",
+					"when": "config.taskExplorer.enableSideBar && config.taskExplorer.showFavoritesButton && view == taskExplorerSideBar && viewItem == scriptRunningS",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.clearSpecialFolder",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == favorites",
+					"group": "inline"
+				},
+				{
+					"command": "taskExplorerSideBar.clearSpecialFolder",
+					"when": "config.taskExplorer.enableSideBar && view == taskExplorerSideBar && viewItem == lasttasks",
+					"group": "inline"
+				}
+			]
+		},
+		"configuration": {
+			"id": "taskExplorer",
+			"type": "object",
+			"title": "Task Explorer",
+			"properties": {
+				"taskExplorer.disableAnimatedIcons": {
+					"type": "boolean",
+					"default": false,
+					"title": "%config.taskExplorer.disableAnimatedIcons%",
+					"description": "%config.taskExplorer.disableAnimatedIconsDsc%"
+				},
+				"taskExplorer.enableExplorerView": {
+					"type": "boolean",
+					"default": true,
+					"description": "%config.taskExplorer.enableExplorerView%"
+				},
+				"taskExplorer.enableSideBar": {
+					"type": "boolean",
+					"default": false,
+					"description": "%config.taskExplorer.enableSideBar%"
+				},
+				"taskExplorer.enableAnt": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableAnt%",
+					"description": "%config.taskExplorer.enableAntDsc%"
+				},
+				"taskExplorer.enableAnsiconForAnt": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableAnsiconForAnt%",
+					"description": "%config.taskExplorer.enableAnsiconForAntDsc%"
+				},
+				"taskExplorer.enableAppPublisher": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableAppPublisher%",
+					"description": "%config.taskExplorer.enableAppPublisherDsc%"
+				},
+				"taskExplorer.enableBash": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableBash%",
+					"description": "%config.taskExplorer.enableBashDsc%"
+				},
+				"taskExplorer.enableBatch": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableBatch%",
+					"description": "%config.taskExplorer.enableBatchDsc%"
+				},
+				"taskExplorer.enableGradle": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableGradle%",
+					"description": "%config.taskExplorer.enableGradleDsc%"
+				},
+				"taskExplorer.enableGrunt": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableGrunt%",
+					"description": "%config.taskExplorer.enableGruntDsc%"
+				},
+				"taskExplorer.enableGulp": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableGulp%",
+					"description": "%config.taskExplorer.enableGulpDsc%"
+				},
+				"taskExplorer.enableMake": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableMake%",
+					"description": "%config.taskExplorer.enableMakeDsc%"
+				},
+				"taskExplorer.enableMaven": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableMaven%",
+					"description": "%config.taskExplorer.enableMavenDsc%"
+				},
+				"taskExplorer.enableNpm": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableNpm%",
+					"description": "%config.taskExplorer.enableNpmDsc%"
+				},
+				"taskExplorer.enableNsis": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableNsis%",
+					"description": "%config.taskExplorer.enableNsisDsc%"
+				},
+				"taskExplorer.enablePerl": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enablePerl%",
+					"description": "%config.taskExplorer.enablePerlDsc%"
+				},
+				"taskExplorer.enableComposer": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableComposer%",
+					"description": "%config.taskExplorer.enableComposerDsc%"
+				},
+				"taskExplorer.enablePipenv": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enablePipenv%",
+					"description": "%config.taskExplorer.enablePipenvDsc%"
+				},
+				"taskExplorer.enablePowershell": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enablePowershell%",
+					"description": "%config.taskExplorer.enablePowershellDsc%"
+				},
+				"taskExplorer.enablePython": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enablePython%",
+					"description": "%config.taskExplorer.enablePythonDsc%"
+				},
+				"taskExplorer.enableRuby": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableRuby%",
+					"description": "%config.taskExplorer.enableRubyDsc%"
+				},
+				"taskExplorer.enableTsc": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableTsc%",
+					"description": "%config.taskExplorer.enableTscDsc%"
+				},
+				"taskExplorer.enableWorkspace": {
+					"type": "boolean",
+					"default": true,
+					"title": "%config.taskExplorer.enableWorkspace%",
+					"description": "%config.taskExplorer.enableWorkspaceDsc%"
+				},
+				"taskExplorer.keepTermOnStop": {
+					"type": "boolean",
+					"default": true,
+					"description": "%config.taskExplorer.keepTermOnStop%"
+				},
+				"taskExplorer.readUserTasks": {
+					"type": "boolean",
+					"default": true,
+					"description": "%config.taskExplorer.readUserTasks%"
+				},
+				"taskExplorer.groupWithSeparator": {
+					"type": "boolean",
+					"default": true,
+					"description": "%config.taskExplorer.groupWithSeparator%"
+				},
+				"taskExplorer.groupSeparator": {
+					"type": "string",
+					"default": "-",
+					"description": "%config.taskExplorer.groupSeparator%"
+				},
+				"taskExplorer.groupStripTaskLabel": {
+					"type": "boolean",
+					"default": true,
+					"description": "%config.taskExplorer.groupStripTaskLabel%"
+				},
+				"taskExplorer.pathToAnt": {
+					"type": "string",
+					"default": "ant.bat",
+					"title": "%config.taskExplorer.pathToAnt%",
+					"description": "%config.taskExplorer.pathToAntDsc%"
+				},
+				"taskExplorer.pathToAppPublisher": {
+					"type": "string",
+					"title": "%config.taskExplorer.pathToAppPublisher%",
+					"description": "%config.taskExplorer.pathToAppPublisherDsc%"
+				},
+				"taskExplorer.pathToAnsicon": {
+					"type": "string",
+					"title": "%config.taskExplorer.pathToAnsicon%",
+					"description": "%config.taskExplorer.pathToAnsiconDsc%"
+				},
+				"taskExplorer.pathToBash": {
+					"type": "string",
+					"default": "bash",
+					"title": "%config.taskExplorer.pathToBash%",
+					"description": "%config.taskExplorer.pathToBashDsc%"
+				},
+				"taskExplorer.pathToGradle": {
+					"type": "string",
+					"default": "gradle.bat",
+					"title": "%config.taskExplorer.pathToGradle%",
+					"description": "%config.taskExplorer.pathToGradleDsc%"
+				},
+				"taskExplorer.pathToMake": {
+					"type": "string",
+					"default": "nmake",
+					"title": "%config.taskExplorer.pathToMake%",
+					"description": "%config.taskExplorer.pathToMakeDsc%"
+				},
+				"taskExplorer.pathToMaven": {
+					"type": "string",
+					"default": "mvn",
+					"title": "%config.taskExplorer.pathToMaven%",
+					"description": "%config.taskExplorer.pathToMavenDsc%"
+				},
+				"taskExplorer.pathToNsis": {
+					"type": "string",
+					"default": "makensis",
+					"title": "%config.taskExplorer.pathToNsis%",
+					"description": "%config.taskExplorer.pathToNsisDsc%"
+				},
+				"taskExplorer.pathToPerl": {
+					"type": "string",
+					"default": "perl",
+					"title": "%config.taskExplorer.pathToPerl%",
+					"description": "%config.taskExplorer.pathToPerlDsc%"
+				},
+				"taskExplorer.pathToComposer": {
+					"type": "string",
+					"default": "composer",
+					"title": "%config.taskExplorer.pathToComposer%",
+					"description": "%config.taskExplorer.pathToComposerDsc%"
+				},
+				"taskExplorer.pathToPipenv": {
+					"type": "string",
+					"default": "pipenv",
+					"title": "%config.taskExplorer.pathToPipenv%",
+					"description": "%config.taskExplorer.pathToPipenvDsc%"
+				},
+				"taskExplorer.pathToPython": {
+					"type": "string",
+					"default": "python",
+					"title": "%config.taskExplorer.pathToPython%",
+					"description": "%config.taskExplorer.pathToPythonDsc%"
+				},
+				"taskExplorer.pathToPowershell": {
+					"type": "string",
+					"default": "powershell",
+					"title": "%config.taskExplorer.pathToPowershell%",
+					"description": "%config.taskExplorer.pathToPowershellDsc%"
+				},
+				"taskExplorer.pathToRuby": {
+					"type": "string",
+					"default": "ruby",
+					"title": "%config.taskExplorer.pathToRuby%",
+					"description": "%config.taskExplorer.pathToRubyDsc%"
+				},
+				"taskExplorer.showExecuteWithArgumentsButton": {
+					"type": "boolean",
+					"default": false,
+					"description": "%config.taskExplorer.showExecuteWithArgumentsButton%"
+				},
+				"taskExplorer.showFavoritesButton": {
+					"type": "boolean",
+					"default": true,
+					"description": "%config.taskExplorer.showFavoritesButton%"
+				},
+				"taskExplorer.showExecuteWithNoTerminalButton": {
+					"type": "boolean",
+					"default": false,
+					"description": "%config.taskExplorer.showExecuteWithNoTerminalButton%"
+				},
+				"taskExplorer.showLastTasks": {
+					"type": "boolean",
+					"default": true,
+					"description": "%config.taskExplorer.showLastTasks%"
+				},
+				"taskExplorer.showRunningTask": {
+					"type": "boolean",
+					"default": true,
+					"description": "%config.taskExplorer.showRunningTask%"
+				},
+				"taskExplorer.numLastTasks": {
+					"type": "number",
+					"enum": [
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						26,
+						17,
+						18,
+						19,
+						20
+					],
+					"default": 10,
+					"title": "%config.taskExplorer.numLastTasks%",
+					"description": "%config.taskExplorer.numLastTasksDsc%"
+				},
+				"taskExplorer.autoRefresh": {
+					"type": "boolean",
+					"default": true,
+					"description": "%config.taskExplorer.autoRefresh%"
+				},
+				"taskExplorer.debug": {
+					"type": "boolean",
+					"default": false,
+					"description": "%config.taskExplorer.debug%"
+				},
+				"taskExplorer.debugLevel": {
+					"type": "number",
+					"enum": [
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"default": 1,
+					"description": "%config.taskExplorer.debugLevel%"
+				},
+				"taskExplorer.groupMaxLevel": {
+					"type": "number",
+					"enum": [
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"default": 1,
+					"description": "%config.taskExplorer.groupMaxLevel%"
+				},
+				"taskExplorer.clickAction": {
+					"type": "string",
+					"enum": [
+						"Execute",
+						"Open"
+					],
+					"default": "Open",
+					"description": "%config.taskExplorer.clickAction%"
+				},
+				"taskExplorer.exclude": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [
+						"**/.vscode-test/**",
+						"**/bin/**",
+						"**/build/**",
+						"**/CompiledOutput/**",
+						"**/dist/**",
+						"**/doc/**",
+						"**/ext/**",
+						"**/out/**",
+						"**/output/**",
+						"**/packages/**",
+						"**/release/**",
+						"**/releases/**",
+						"**/samples/**",
+						"**/sdks/**",
+						"**/static/**",
+						"**/target/**",
+						"**/test/**",
+						"**/third_party/**",
+						"**/vendor/**",
+						"**/work/**"
+					],
+					"description": "%config.taskExplorer.exclude%"
+				},
+				"taskExplorer.useAnt": {
+					"type": "boolean",
+					"default": false,
+					"title": "%config.taskExplorer.useAnt%",
+					"description": "%config.taskExplorer.useAntDsc%"
+				},
+				"taskExplorer.useGulp": {
+					"type": "boolean",
+					"default": false,
+					"title": "%config.taskExplorer.useGulp%",
+					"description": "%config.taskExplorer.useGulpDsc%"
+				},
+				"taskExplorer.includeAnt": {
+					"type": [
+						"string",
+						"array"
+					],
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"title": "%config.taskExplorer.includeAnt%",
+					"markdownDescription": "%config.taskExplorer.includeAntDsc%"
+				},
+				"taskExplorer.globPatternsAnt": {
+					"type": [
+						"array"
+					],
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"title": "%config.taskExplorer.globPatternsAnt%",
+					"description": "%config.taskExplorer.globPatternsAntDsc%"
+				},
+				"taskExplorer.globPatternsBash": {
+					"type": [
+						"array"
+					],
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"title": "%config.taskExplorer.globPatternsBash%",
+					"description": "%config.taskExplorer.globPatternsBashDsc%"
+				}
+			}
+		},
+		"taskDefinitions": [
+			{
+				"type": "ant",
+				"required": [],
+				"properties": {
+					"script": {
+						"type": "string",
+						"description": "%taskdef.task.script%"
+					},
+					"target": {
+						"type": "string",
+						"description": "%taskdef.task.target%"
+					},
+					"path": {
+						"type": "string",
+						"description": "%taskdef.task.path%"
+					},
+					"fileName": {
+						"type": "string",
+						"description": "%taskdef.task.fileName%"
+					},
+					"uri": {
+						"type": "object",
+						"description": "%taskdef.task.fileUri%"
+					},
+					"taskItemId": {
+						"type": "string",
+						"description": "%taskdef.task.taskItemId%"
+					},
+					"isDefault": {
+						"type": "boolean",
+						"description": "%taskdef.task.isDefault%"
+					}
+				}
+			},
+			{
+				"type": "gradle",
+				"required": [
+					"script"
+				],
+				"properties": {
+					"script": {
+						"type": "string",
+						"description": "%taskdef.task.script%"
+					},
+					"target": {
+						"type": "string",
+						"description": "%taskdef.task.target%"
+					},
+					"path": {
+						"type": "string",
+						"description": "%taskdef.task.path%"
+					},
+					"fileName": {
+						"type": "string",
+						"description": "%taskdef.task.fileName%"
+					},
+					"uri": {
+						"type": "object",
+						"description": "%taskdef.task.fileUri%"
+					},
+					"taskItemId": {
+						"type": "string",
+						"description": "%taskdef.task.taskItemId%"
+					}
+				}
+			},
+			{
+				"type": "grunt",
+				"required": [],
+				"properties": {
+					"script": {
+						"type": "string",
+						"description": "%taskdef.task.script%"
+					},
+					"target": {
+						"type": "string",
+						"description": "%taskdef.task.target%"
+					},
+					"path": {
+						"type": "string",
+						"description": "%taskdef.task.path%"
+					},
+					"fileName": {
+						"type": "string",
+						"description": "%taskdef.task.fileName%"
+					},
+					"uri": {
+						"type": "object",
+						"description": "%taskdef.task.fileUri%"
+					},
+					"taskItemId": {
+						"type": "string",
+						"description": "%taskdef.task.taskItemId%"
+					}
+				}
+			},
+			{
+				"type": "gulp",
+				"required": [],
+				"properties": {
+					"script": {
+						"type": "string",
+						"description": "%taskdef.task.script%"
+					},
+					"target": {
+						"type": "string",
+						"description": "%taskdef.task.target%"
+					},
+					"path": {
+						"type": "string",
+						"description": "%taskdef.task.path%"
+					},
+					"fileName": {
+						"type": "string",
+						"description": "%taskdef.task.fileName%"
+					},
+					"uri": {
+						"type": "object",
+						"description": "%taskdef.task.fileUri%"
+					},
+					"taskItemId": {
+						"type": "string",
+						"description": "%taskdef.task.taskItemId%"
+					}
+				}
+			},
+			{
+				"type": "app-publisher",
+				"required": [
+					"cmdLine"
+				],
+				"properties": {
+					"script": {
+						"type": "string",
+						"description": "%taskdef.task.script%"
+					},
+					"target": {
+						"type": "string",
+						"description": "%taskdef.task.target%"
+					},
+					"path": {
+						"type": "string",
+						"description": "%taskdef.task.path%"
+					},
+					"fileName": {
+						"type": "string",
+						"description": "%taskdef.task.fileName%"
+					},
+					"uri": {
+						"type": "object",
+						"description": "%taskdef.task.fileUri%"
+					},
+					"taskItemId": {
+						"type": "string",
+						"description": "%taskdef.task.taskItemId%"
+					},
+					"takesArgs": {
+						"type": "boolean",
+						"description": "%taskdef.task.takesArgs%"
+					},
+					"cmdLine": {
+						"type": "string",
+						"description": "%taskdef.task.cmdLine%"
+					}
+				}
+			},
+			{
+				"type": "maven",
+				"required": [
+					"cmdLine"
+				],
+				"properties": {
+					"script": {
+						"type": "string",
+						"description": "%taskdef.task.script%"
+					},
+					"target": {
+						"type": "string",
+						"description": "%taskdef.task.target%"
+					},
+					"path": {
+						"type": "string",
+						"description": "%taskdef.task.path%"
+					},
+					"fileName": {
+						"type": "string",
+						"description": "%taskdef.task.fileName%"
+					},
+					"uri": {
+						"type": "object",
+						"description": "%taskdef.task.fileUri%"
+					},
+					"taskItemId": {
+						"type": "string",
+						"description": "%taskdef.task.taskItemId%"
+					},
+					"takesArgs": {
+						"type": "boolean",
+						"description": "%taskdef.task.takesArgs%"
+					},
+					"cmdLine": {
+						"type": "string",
+						"description": "%taskdef.task.cmdLine%"
+					}
+				}
+			},
+			{
+				"type": "make",
+				"required": [],
+				"properties": {
+					"script": {
+						"type": "string",
+						"description": "%taskdef.task.script%"
+					},
+					"target": {
+						"type": "string",
+						"description": "%taskdef.task.target%"
+					},
+					"path": {
+						"type": "string",
+						"description": "%taskdef.task.path%"
+					},
+					"fileName": {
+						"type": "string",
+						"description": "%taskdef.task.fileName%"
+					},
+					"uri": {
+						"type": "object",
+						"description": "%taskdef.task.fileUri%"
+					},
+					"taskItemId": {
+						"type": "string",
+						"description": "%taskdef.task.taskItemId%"
+					}
+				}
+			},
+			{
+				"type": "composer",
+				"required": [],
+				"properties": {
+					"script": {
+						"type": "string",
+						"description": "%taskdef.task.script%"
+					},
+					"target": {
+						"type": "string",
+						"description": "%taskdef.task.target%"
+					},
+					"path": {
+						"type": "string",
+						"description": "%taskdef.task.path%"
+					},
+					"fileName": {
+						"type": "string",
+						"description": "%taskdef.task.fileName%"
+					},
+					"uri": {
+						"type": "object",
+						"description": "%taskdef.task.fileUri%"
+					},
+					"taskItemId": {
+						"type": "string",
+						"description": "%taskdef.task.taskItemId%"
+					}
+				}
+			},
+			{
+				"type": "script",
+				"required": [
+					"scriptType",
+					"fileName"
+				],
+				"properties": {
+					"scriptType": {
+						"type": "string",
+						"description": "%taskdef.task.scriptType%"
+					},
+					"path": {
+						"type": "string",
+						"description": "%taskdef.task.path%"
+					},
+					"fileName": {
+						"type": "string",
+						"description": "%taskdef.task.fileName%"
+					},
+					"scriptFile": {
+						"type": "boolean",
+						"description": "%taskdef.task.scriptFile%",
+						"default": true
+					},
+					"script": {
+						"type": "string",
+						"description": "%taskdef.task.script%"
+					},
+					"target": {
+						"type": "string",
+						"description": "%taskdef.task.target%"
+					},
+					"uri": {
+						"type": "object",
+						"description": "%taskdef.task.fileUri%"
+					},
+					"taskItemId": {
+						"type": "string",
+						"description": "%taskdef.task.taskItemId%"
+					},
+					"takesArgs": {
+						"type": "boolean",
+						"description": "%taskdef.task.takesArgs%"
+					}
+				}
+			}
+		],
+		"problemMatchers": [
+			{
+				"name": "gccte",
+				"owner": "cpp",
+				"label": "Task Explorer gcc",
+				"fileLocation": [
+					"relative",
+					"${workspaceRoot}"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		]
+	},
+	"__metadata": {
+		"id": "afc7b7f6-486c-4560-94cb-6130ea88cdb8",
+		"publisherId": "d85f8b27-53d9-4b98-bcf4-92d20587bf33",
+		"publisherDisplayName": "Scott Meesseman",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1663369304612
+	}
+}

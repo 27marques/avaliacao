@@ -1,0 +1,9 @@
+[Info  - 9:13:36 PM] Initialising intelephense 1.8.2
+[Info  - 9:13:36 PM] Initialised in 8 ms
+[Info  - 9:13:36 PM] Environment changed. Refreshing 1 in memory documents.
+[Info  - 9:13:36 PM] Searching file:///home/senac/.vscode-server/extensions/bmewburn.vscode-intelephense-client-1.8.2/node_modules/intelephense/lib/stub for files to index.
+[Info  - 9:13:36 PM] Searching file:///home/senac/html/api_banco for files to index.
+[Info  - 9:13:36 PM] Indexing started.
+[Info  - 9:13:37 PM] Indexing ended. 145 files indexed in 1s.
+[Info  - 9:13:37 PM] Writing state to /home/senac/.vscode-server/data/User/workspaceStorage/25dd2f8ab5fca387655d9267b9f202fc/bmewburn.vscode-intelephense-client/312561ef.
+[Info  - 9:13:37 PM] Wrote state in 0.1s.

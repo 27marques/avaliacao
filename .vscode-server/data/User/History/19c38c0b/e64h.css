@@ -1,0 +1,19 @@
+nav.main ul{
+
+    margin: 0;
+
+    padding: 0;
+
+    display: flex;
+
+}
+
+
+
+nav.main li{
+
+    list-style: none;
+
+    flex: 1 1 auto;
+
+}

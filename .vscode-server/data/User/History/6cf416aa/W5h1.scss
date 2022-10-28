@@ -1,0 +1,24 @@
+body, 
+html{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 830px;
+    margin: 0 auto;
+    .row{
+        display: flex;
+        .col-6{
+            flex-basis: 50%;
+            @media (max-width: 768px){
+                flex-basis: 100%;
+            }
+        }
+        .col-4{
+            flex-basis: 33%;
+            @media (max-width: 768px){
+                flex-basis: 100%;
+            }
+        }
+    }   
+}

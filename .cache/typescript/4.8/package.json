@@ -1,0 +1,1 @@
+{"private":true,"dependencies":{"types-registry":"^0.1.614"},"devDependencies":{"@types/babel__core":"^7.1.19","@types/babel__preset-env":"^7.9.2","@types/bootstrap":"^5.2.4","@types/node-sass":"^4.11.3","@types/react":"^18.0.21","@types/react-dom":"^18.0.6","@types/sass-loader":"^8.0.3","@types/testing-library__jest-dom":"^5.14.5","@types/webpack":"^5.28.0"}}

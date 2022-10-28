@@ -1,0 +1,24 @@
+[2022-10-14 19:53:29.472] [exthost] [info] Extension host with pid 2123 started
+[2022-10-14 19:53:29.595] [exthost] [info] Lock '/home/senac/.vscode-server/data/User/workspaceStorage/259c1ac4ee20c791d60b157088050ea2/vscode.lock': Lock acquired.
+[2022-10-14 19:53:29.682] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:javascript'
+[2022-10-14 19:53:29.683] [exthost] [info] ExtensionService#_doActivateExtension christian-kohler.npm-intellisense, startup: false, activationEvent: 'onLanguage:javascript'
+[2022-10-14 19:53:29.683] [exthost] [info] ExtensionService#_doActivateExtension mgmcdermott.vscode-language-babel, startup: false, activationEvent: 'onLanguage:javascript'
+[2022-10-14 19:53:29.684] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-10-14 19:53:29.684] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+[2022-10-14 19:53:29.684] [exthost] [info] ExtensionService#_doActivateExtension vscode.ipynb, startup: true, activationEvent: '*'
+[2022-10-14 19:53:29.685] [exthost] [info] ExtensionService#_doActivateExtension spmeesseman.vscode-taskexplorer, startup: true, activationEvent: '*'
+[2022-10-14 19:53:29.948] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm, startup: true, activationEvent: 'workspaceContains:package.json'
+[2022-10-14 19:53:30.291] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2022-10-14 19:53:30.291] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-10-14 19:53:31.757] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+[2022-10-14 19:53:31.757] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+[2022-10-14 19:53:33.314] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-14 19:53:33.315] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-14 19:53:33.315] [exthost] [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-14 19:53:33.315] [exthost] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-14 19:53:33.315] [exthost] [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-14 19:53:33.315] [exthost] [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-14 19:53:33.315] [exthost] [info] Eager extensions activated
+[2022-10-14 21:16:20.078] [exthost] [info] Extension host terminating: received terminate message from renderer
+[2022-10-14 21:16:20.082] [exthost] [info] Lock '/home/senac/.vscode-server/data/User/workspaceStorage/259c1ac4ee20c791d60b157088050ea2/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+[2022-10-14 21:16:20.299] [exthost] [info] Extension host with pid 2123 exiting with code 0

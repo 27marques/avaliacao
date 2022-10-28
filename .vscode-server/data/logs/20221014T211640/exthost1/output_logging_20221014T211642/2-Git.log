@@ -1,0 +1,32 @@
+[2022-10-15T00:16:43.860Z] Nível de log: Info
+[2022-10-15T00:16:43.869Z] [info] Validando git localizado em: git
+[2022-10-15T00:16:43.942Z] [info] Usando git 2.25.1 de git
+[2022-10-15T00:16:43.976Z] > git rev-parse --show-toplevel [8ms]
+[2022-10-15T00:16:44.031Z] > git rev-parse --git-dir --git-common-dir [30ms]
+[2022-10-15T00:16:44.043Z] [info] Open repository: /home/senac
+[2022-10-15T00:16:44.085Z] > git rev-parse --show-toplevel [4ms]
+[2022-10-15T00:16:44.099Z] > git fetch [44ms]
+[2022-10-15T00:16:44.116Z] > git rev-parse --show-toplevel [19ms]
+[2022-10-15T00:16:44.136Z] > git rev-parse --show-toplevel [3ms]
+[2022-10-15T00:16:44.149Z] > git rev-parse --show-toplevel [6ms]
+[2022-10-15T00:16:44.163Z] > git rev-parse --show-toplevel [3ms]
+[2022-10-15T00:16:44.185Z] > git status -z -uall [114ms]
+[2022-10-15T00:16:44.194Z] > git rev-parse --git-dir --git-common-dir [22ms]
+[2022-10-15T00:16:44.196Z] [info] Open repository: /home/senac/.nvm
+[2022-10-15T00:16:44.225Z] > git status -z -uall [17ms]
+[2022-10-15T00:16:44.240Z] > git rev-parse --show-toplevel [26ms]
+[2022-10-15T00:16:44.253Z] > git symbolic-ref --short HEAD [60ms]
+[2022-10-15T00:16:44.268Z] > git rev-parse --show-toplevel [15ms]
+[2022-10-15T00:16:44.277Z] > git symbolic-ref --short HEAD [37ms]
+[2022-10-15T00:16:44.277Z] fatal: ref HEAD is not a symbolic ref
+[2022-10-15T00:16:44.285Z] > git rev-parse HEAD [2ms]
+[2022-10-15T00:16:44.299Z] > git rev-parse --show-toplevel [23ms]
+[2022-10-15T00:16:44.307Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [43ms]
+[2022-10-15T00:16:44.323Z] > git remote --verbose [2ms]
+[2022-10-15T00:16:44.324Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [11ms]
+[2022-10-15T00:16:44.380Z] > git rev-parse --show-toplevel [73ms]
+[2022-10-15T00:16:44.388Z] > git remote --verbose [90ms]
+[2022-10-15T00:16:44.389Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [96ms]
+[2022-10-15T00:16:44.409Z] > git rev-parse --show-toplevel [21ms]
+[2022-10-15T00:16:44.422Z] > git config --get commit.template [13ms]
+[2022-10-15T00:16:44.432Z] > git config --get commit.template [31ms]

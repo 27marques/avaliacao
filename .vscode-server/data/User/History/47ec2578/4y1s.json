@@ -1,0 +1,18 @@
+{
+  "name": "aula06",
+  "version": "1.0.0",
+  "description": "aula 06 sobre webpack",
+  "main": "index.js",
+  "author": "Patricia",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "watch" : "babelsrc/index.js -o dist/index_c.js --watch",
+    "watch:p" : "babelsrc/index.js -o dist/index_c.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10"
+  }
+}
