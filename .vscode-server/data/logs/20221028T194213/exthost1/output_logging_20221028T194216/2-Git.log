@@ -116,3 +116,71 @@ error: failed to push some refs to 'https://github.com/27marques/avaliacao.git'
 [2022-10-28T22:43:56.963Z] > git remote --verbose [9ms]
 [2022-10-28T22:43:56.964Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [19ms]
 [2022-10-28T22:43:57.934Z] > git config --get commit.template [850ms]
+[2022-10-28T22:44:17.315Z] > git add -A -- . [20571ms]
+[2022-10-28T22:44:17.315Z] warning: adding embedded git repository: .nvm
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint: 	git submodule add <url> .nvm
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint: 	git rm --cached .nvm
+hint: 
+hint: See "git help submodule" for more information.
+warning: adding embedded git repository: aulasweb
+warning: adding embedded git repository: compartilha_web_security
+warning: adding embedded git repository: meu-app-react
+warning: adding embedded git repository: senac-projetoweb
+warning: adding embedded git repository: simples
+[2022-10-28T22:44:18.192Z] > git -c user.useConfigOnly=true commit --quiet --allow-empty-message --file - [865ms]
+[2022-10-28T22:44:18.192Z] Auto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+[2022-10-28T22:44:18.399Z] > git status -z -uall [197ms]
+[2022-10-28T22:44:18.411Z] > git symbolic-ref --short HEAD [2ms]
+[2022-10-28T22:44:18.424Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+[2022-10-28T22:44:18.443Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [9ms]
+[2022-10-28T22:44:18.444Z] > git remote --verbose [2ms]
+[2022-10-28T22:44:18.495Z] > git config --get commit.template [1ms]
+[2022-10-28T22:44:18.534Z] > git config --get commit.template [1ms]
+[2022-10-28T22:44:18.652Z] > git status -z -uall [141ms]
+[2022-10-28T22:44:18.665Z] > git symbolic-ref --short HEAD [2ms]
+[2022-10-28T22:44:18.681Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+[2022-10-28T22:44:18.711Z] > git remote --verbose [3ms]
+[2022-10-28T22:44:18.711Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [15ms]
+[2022-10-28T22:44:18.731Z] > git config --get commit.template [2ms]
+[2022-10-28T22:44:23.914Z] > git status -z -uall [170ms]
+[2022-10-28T22:44:23.923Z] > git symbolic-ref --short HEAD [2ms]
+[2022-10-28T22:44:23.934Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+[2022-10-28T22:44:23.953Z] > git remote --verbose [2ms]
+[2022-10-28T22:44:23.953Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [8ms]
+[2022-10-28T22:44:23.966Z] > git config --get commit.template [1ms]
+[2022-10-28T22:44:29.105Z] > git status -z -uall [127ms]
+[2022-10-28T22:44:29.117Z] > git symbolic-ref --short HEAD [1ms]
+[2022-10-28T22:44:29.129Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+[2022-10-28T22:44:29.150Z] > git remote --verbose [1ms]
+[2022-10-28T22:44:29.150Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [14ms]
+[2022-10-28T22:44:29.164Z] > git config --get commit.template [1ms]
+[2022-10-28T22:44:34.303Z] > git status -z -uall [131ms]
+[2022-10-28T22:44:34.317Z] > git symbolic-ref --short HEAD [1ms]
+[2022-10-28T22:44:34.329Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+[2022-10-28T22:44:34.348Z] > git remote --verbose [1ms]
+[2022-10-28T22:44:34.348Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [11ms]
+[2022-10-28T22:44:34.362Z] > git config --get commit.template [2ms]
+[2022-10-28T22:44:39.532Z] > git status -z -uall [157ms]
+[2022-10-28T22:44:39.542Z] > git symbolic-ref --short HEAD [2ms]
+[2022-10-28T22:44:39.553Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+[2022-10-28T22:44:39.574Z] > git remote --verbose [4ms]
+[2022-10-28T22:44:39.574Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [10ms]
+[2022-10-28T22:44:39.588Z] > git config --get commit.template [2ms]
+[2022-10-28T22:44:41.428Z] > git add -A -- /home/senac/.vscode-server/data/logs/20221028T194213/exthost1/exthost.log /home/senac/.vscode-server/data/logs/20221028T194213/exthost1/output_logging_20221028T194216/2-Git.log /home/senac/aulasweb /home/senac/compartilha_web_security /home/senac/meu-app-react /home/senac/senac-projetoweb [69ms]
+[2022-10-28T22:44:41.579Z] > git status -z -uall [144ms]
+[2022-10-28T22:44:41.589Z] > git symbolic-ref --short HEAD [2ms]
+[2022-10-28T22:44:41.602Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+[2022-10-28T22:44:41.628Z] > git remote --verbose [3ms]
+[2022-10-28T22:44:41.628Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [14ms]
+[2022-10-28T22:44:41.640Z] > git config --get commit.template [1ms]
+[2022-10-28T22:44:42.321Z] > git check-ignore -v -z --stdin [6ms]
