@@ -492,3 +492,60 @@ cd api_banco
 code api_banco
 cd api_banco
 code .
+ls
+cd avaliacaoapp
+yarn start
+yarn create-react-app avaliacao
+npx create-react-app avaliacaoapp
+ls
+cd avaliacaoiapp
+cd avaliacaoapp
+yarn add react-router-dom @mui/material @emotion/react @emotion/styled @mui/icons-material yarn start
+code .
+yarn start
+cd ..]
+cd ..
+cd src/
+ls
+cd ..
+ls
+cd public/
+ls
+cd ..
+ls
+cd meuprojeto
+code .
+ls
+exit
+ls
+cd senac-projetoweb
+code .
+yarn start
+exit
+ls
+avaliacaoapp
+cd avaliacaoapp
+code .
+yarn start
+ls
+cd meu-app-react
+code .
+yarn start
+ls
+cd avaliacaoapp
+code .
+yarn start
+ls
+cd avaliacaoapp
+code .
+yarn start
+ls
+cd meu-app-react
+code .
+ls
+cd avaliacaoapp
+code .
+yarn start
+ls
+exite
+yarn start

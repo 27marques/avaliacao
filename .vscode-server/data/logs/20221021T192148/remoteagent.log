@@ -1,7 +1,0 @@
-[2022-10-21 19:21:48.065] [remoteagent] [info] Extension host agent started.
-[2022-10-21 19:21:48.449] [remoteagent] [info] [127.0.0.1][2b7b67f2][ManagementConnection] New connection established.
-[2022-10-21 19:21:48.514] [remoteagent] [info] Deleted from disk github.copilot /home/senac/.vscode-server/extensions/github.copilot-1.53.7011
-[2022-10-21 19:21:48.569] [remoteagent] [info] [127.0.0.1][881fb912][ExtensionHostConnection] New connection established.
-[2022-10-21 19:21:48.594] [remoteagent] [info] [127.0.0.1][881fb912][ExtensionHostConnection] <574> Launched Extension Host Process.
-[2022-10-21 20:48:31.305] [remoteagent] [info] [127.0.0.1][2b7b67f2][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[2022-10-21 20:48:31.533] [remoteagent] [info] [127.0.0.1][881fb912][ExtensionHostConnection] <574> Extension Host Process exited with code: 0, signal: null.
