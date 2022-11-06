@@ -492,3 +492,30 @@ cd api_banco
 code api_banco
 cd api_banco
 code .
+npm -v
+create-react-app
+npx create-react-app meu-app-do-react
+cd meu-app-do-react
+npm start
+git add .
+git add
+git commit -m "avaliacao webt"
+code .
+npm install typescript @types/node @types/react @types/react-dom @types/jest
+git add git commit -m "avaliacao webt"
+yarn
+ls
+cd meu-app-react
+code .
+node -v
+npm -v
+npx create-react-app avaliacao-app-react
+cd avaliacao-app-react
+npm start
+git add git commit -m "avaliacao-app-react"
+Sudo apt update  -y
+sudo apt install
+code .
+cd meu-app-react
+code .
+ls
