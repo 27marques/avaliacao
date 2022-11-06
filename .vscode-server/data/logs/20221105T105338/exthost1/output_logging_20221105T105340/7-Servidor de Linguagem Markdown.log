@@ -1,0 +1,11 @@
+[Trace 14:28:51.085] VsCodeClientWorkspace: TextDocument.onDidOpen: file:///home/senac/meu-app-do-react/README.md
+[Trace 14:28:51.098] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/senac/meu-app-do-react/README.md
+[Trace 14:28:51.100] Server: connection.languages.diagnostics.on: file:///home/senac/meu-app-do-react/README.md
+[Trace 14:28:51.113] Server: connection.languages.diagnostics.on: file:///home/senac/meu-app-do-react/README.md
+[Trace 14:28:51.596] DocumentSymbolProvider: provideDocumentSymbols — file:///home/senac/meu-app-do-react/README.md 1
+[Debug 14:28:51.597] LinkProvider: compute - file:///home/senac/meu-app-do-react/README.md
+[Debug 14:28:51.886] MdFoldingProvider: provideFoldingRanges — file:///home/senac/meu-app-do-react/README.md 1
+[Debug 14:28:51.888] TableOfContentsProvider: create - file:///home/senac/meu-app-do-react/README.md
+[Trace 14:30:10.703] VsCodeClientWorkspace: TextDocument.onDidClose: file:///home/senac/meu-app-do-react/README.md
+[Trace 14:30:10.704] VsCodeClientWorkspace: deleteDocument: file:///home/senac/meu-app-do-react/README.md
+[Trace 14:39:12.176] VsCodeClientWorkspace: onDidChangeWatchedFiles: 3: file:///home/senac/meu-app-do-react/README.md

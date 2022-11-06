@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app{
+    background-image: url(./https://www.bing.com/images/search?view=detailV2&ccid=ETzmxNFX&id=AC683FA021C3D1B236B09FB3B1969A883005568A&thid=OIP.ETzmxNFXgg8aam7FMxcWrAHaFj&mediaurl=https%3a%2f%2f4.bp.blogspot.com%2f-NupRCO_CBwQ%2fVv8NqNoFMOI%2fAAAAAAAAE6A%2f56MMostbKt4xtGa0EyswZWt4OZEtBWTPg%2fs1600%2fQueen-logo.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.113ce6c4d157820f1a6a6ec5331716ac%3frik%3dilYFMIialrGznw%26pid%3dImgRaw%26r%3d0&exph=960&expw=1280&q=Queen+Banda+Logo&simid=608050709725780758&FORM=IRPRST&ck=67AECFEBDE4161C406D505CC4723E517&selectedIndex=9&ajaxhist=0&ajaxserp=0/baixados.jpeg);
+}
+
+

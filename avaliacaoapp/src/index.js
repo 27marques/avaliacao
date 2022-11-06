@@ -1,20 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-//import { BrowserRouter, createBrowserRouter, Route, RouterProvider } from 'react-router-dom';
-//import Contato from './components/Contato';
-//import ErrorPage from './components/ErrorPage';
-//import FetchNews from './components/FetchNews';
-//import Sobre from './components/Sobre';
-//import Noticias from './components/Noticias';
 import './index.css';
-//import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Root from './routes/root';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Root />
+    <App />
   </React.StrictMode>
 );
 

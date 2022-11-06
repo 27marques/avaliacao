@@ -1,0 +1,14 @@
+2022-11-04 19:15:19.272 [info] Extension host agent started.
+2022-11-04 19:15:19.402 [info] [127.0.0.1][a558181e][ManagementConnection] New connection established.
+2022-11-04 19:15:19.590 [info] [127.0.0.1][880a2f2c][ExtensionHostConnection] New connection established.
+2022-11-04 19:15:19.752 [info] Deleted from disk github.copilot /home/senac/.vscode-server/extensions/github.copilot-1.56.7152
+2022-11-04 19:15:19.757 [info] [127.0.0.1][880a2f2c][ExtensionHostConnection] <576> Launched Extension Host Process.
+2022-11-04 19:15:19.759 [info] Deleted from disk ms-ceintl.vscode-language-pack-pt-br /home/senac/.vscode-server/extensions/ms-ceintl.vscode-language-pack-pt-br-1.72.10121011
+2022-11-04 19:24:24.416 [info] [127.0.0.1][c73320e4][ManagementConnection] New connection established.
+2022-11-04 19:24:24.901 [info] [127.0.0.1][1f5a4a9a][ExtensionHostConnection] New connection established.
+2022-11-04 19:24:24.915 [info] [127.0.0.1][1f5a4a9a][ExtensionHostConnection] <2795> Launched Extension Host Process.
+2022-11-04 20:06:15.014 [info] [127.0.0.1][c73320e4][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2022-11-04 20:06:15.865 [info] [127.0.0.1][1f5a4a9a][ExtensionHostConnection] <2795> Extension Host Process exited with code: 0, signal: null.
+2022-11-04 20:44:08.355 [warning] No ptyHost heartbeat after 6 seconds
+2022-11-04 21:57:07.070 [info] [127.0.0.1][a558181e][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2022-11-04 21:57:07.832 [info] [127.0.0.1][880a2f2c][ExtensionHostConnection] <576> Extension Host Process exited with code: 0, signal: null.

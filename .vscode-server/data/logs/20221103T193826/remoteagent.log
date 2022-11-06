@@ -1,0 +1,28 @@
+2022-11-03 19:38:26.536 [info] Extension host agent started.
+2022-11-03 19:38:26.863 [info] [127.0.0.1][ad141f23][ManagementConnection] New connection established.
+2022-11-03 19:38:26.885 [info] [127.0.0.1][58cee3dd][ExtensionHostConnection] New connection established.
+2022-11-03 19:38:27.225 [info] [127.0.0.1][58cee3dd][ExtensionHostConnection] <618> Launched Extension Host Process.
+2022-11-03 19:38:33.002 [info] Getting Manifest... ms-ceintl.vscode-language-pack-pt-br
+2022-11-03 19:38:33.002 [info] Getting Manifest... github.copilot
+2022-11-03 19:38:33.002 [info] Getting Manifest... ms-ceintl.vscode-language-pack-pt-br
+2022-11-03 19:38:33.943 [info] Installing extension: github.copilot
+2022-11-03 19:38:33.954 [info] Installing extension: ms-ceintl.vscode-language-pack-pt-br
+2022-11-03 19:38:34.620 [info] Extensions is already requested to install ms-ceintl.vscode-language-pack-pt-br
+2022-11-03 19:38:44.299 [info] Extracted extension to /home/senac/.vscode-server/extensions/.0faa40dd-6d62-4c5d-ba04-be55e6e4089a: ms-ceintl.vscode-language-pack-pt-br
+2022-11-03 19:38:44.307 [info] Renamed to /home/senac/.vscode-server/extensions/ms-ceintl.vscode-language-pack-pt-br-1.73.11021008
+2022-11-03 19:38:44.312 [info] Extracting completed. ms-ceintl.vscode-language-pack-pt-br
+2022-11-03 19:38:44.318 [info] Adding language packs from the extension ms-ceintl.vscode-language-pack-pt-br
+2022-11-03 19:38:44.529 [info] Extension installed successfully: ms-ceintl.vscode-language-pack-pt-br
+2022-11-03 19:38:51.217 [info] Extracted extension to /home/senac/.vscode-server/extensions/.3a235fe2-87a1-4aa2-8930-91b8c709045b: github.copilot
+2022-11-03 19:38:51.226 [info] Renamed to /home/senac/.vscode-server/extensions/github.copilot-1.57.7193
+2022-11-03 19:38:51.228 [info] Extracting completed. github.copilot
+2022-11-03 19:38:51.234 [info] Extension installed successfully: github.copilot
+2022-11-03 21:26:04.193 [warning] No ptyHost heartbeat after 6 seconds
+2022-11-03 21:27:10.874 [warning] No ptyHost heartbeat after 6 seconds
+2022-11-03 21:34:07.987 [warning] No ptyHost heartbeat after 6 seconds
+2022-11-03 21:34:18.956 [warning] No ptyHost heartbeat after 6 seconds
+2022-11-03 21:34:32.673 [warning] No ptyHost heartbeat after 6 seconds
+2022-11-03 21:34:50.443 [warning] No ptyHost heartbeat after 6 seconds
+2022-11-03 21:35:24.795 [warning] No ptyHost heartbeat after 6 seconds
+2022-11-03 22:08:30.517 [info] [127.0.0.1][ad141f23][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2022-11-03 22:08:31.003 [info] [127.0.0.1][58cee3dd][ExtensionHostConnection] <618> Extension Host Process exited with code: 0, signal: null.

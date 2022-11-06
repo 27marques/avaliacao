@@ -492,60 +492,30 @@ cd api_banco
 code api_banco
 cd api_banco
 code .
-ls
-cd avaliacaoapp
-yarn start
-yarn create-react-app avaliacao
-npx create-react-app avaliacaoapp
-ls
-cd avaliacaoiapp
-cd avaliacaoapp
-yarn add react-router-dom @mui/material @emotion/react @emotion/styled @mui/icons-material yarn start
+npm -v
+create-react-app
+npx create-react-app meu-app-do-react
+cd meu-app-do-react
+npm start
+git add .
+git add
+git commit -m "avaliacao webt"
 code .
-yarn start
-cd ..]
-cd ..
-cd src/
-ls
-cd ..
-ls
-cd public/
-ls
-cd ..
-ls
-cd meuprojeto
-code .
-ls
-exit
-ls
-cd senac-projetoweb
-code .
-yarn start
-exit
-ls
-avaliacaoapp
-cd avaliacaoapp
-code .
-yarn start
+npm install typescript @types/node @types/react @types/react-dom @types/jest
+git add git commit -m "avaliacao webt"
+yarn
 ls
 cd meu-app-react
 code .
-yarn start
-ls
-cd avaliacaoapp
+node -v
+npm -v
+npx create-react-app avaliacao-app-react
+cd avaliacao-app-react
+npm start
+git add git commit -m "avaliacao-app-react"
+Sudo apt update  -y
+sudo apt install
 code .
-yarn start
-ls
-cd avaliacaoapp
-code .
-yarn start
-ls
 cd meu-app-react
 code .
 ls
-cd avaliacaoapp
-code .
-yarn start
-ls
-exite
-yarn start

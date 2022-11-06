@@ -1,3 +1,0 @@
-[INFO] [default] [2022-10-28T22:45:42.036Z] [fetchCompletions] engine https://copilot-proxy.githubusercontent.com/v1/engines/copilot-experiment-d-centralus
-[INFO] [default] [2022-10-28T22:45:42.684Z] request.response: [https://copilot-proxy.githubusercontent.com/v1/engines/copilot-experiment-d-centralus/completions] took 647 ms
-[INFO] [streamChoices] [2022-10-28T22:45:42.696Z] solution 0 returned. finish reason: ["stop"] finishOffset: [undefined] completionId: [{cmpl-66SLnwDfYonRaIbWzM9rFwlmAG5BE}] created: [{1666996967}]
